@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { useState, useEffect, type FormEvent } from 'react';
 import { Book, Plus, BarChart2, Target, Flame, PieChart, Edit3, Trash2, CheckCircle, BookOpen } from 'lucide-react';
 import { format, subDays } from 'date-fns';
