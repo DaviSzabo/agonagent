@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, type FormEvent } from 'react';
 import { Book, Plus, BarChart2, Target, Flame, PieChart, Edit3, Trash2, CheckCircle, BookOpen } from 'lucide-react';
 import { format, subDays } from 'date-fns';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, PieChart as RechartsPie, Pie, Cell, Legend } from 'recharts';
@@ -65,7 +65,7 @@ export default function App() {
     }
   };
 
-  const handleSaveBook = async (e: React.FormEvent) => {
+  const handleSaveBook = async (e: FormEvent) => {
     e.preventDefault();
     const isEdit = !!editingBook;
     const url = '/api/books';
@@ -117,7 +117,7 @@ export default function App() {
     }
   };
 
-  const handleSaveLog = async (e: React.FormEvent) => {
+  const handleSaveLog = async (e: FormEvent) => {
     e.preventDefault();
     if (!selectedBookToLog) return;
 
@@ -161,7 +161,7 @@ export default function App() {
     }
   };
 
-  const handleUpdateGoal = async (e: React.FormEvent) => {
+  const handleUpdateGoal = async (e: FormEvent) => {
     e.preventDefault();
     const goal = parseInt(goalForm);
     if (!goal || goal <= 0) return;
